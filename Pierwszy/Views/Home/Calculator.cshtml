@@ -1,0 +1,29 @@
+﻿@model Pierwszy.Models.Number
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<h1>KALKULATOR</h1>
+<form action="Calculator">
+    <div>
+        Liczba 1:
+        <input type="number" asp-for="xValue" />
+        Liczba 2:
+        <input type="number" asp-for="yValue" />
+        <select name="dzialanie">
+            <option value="Dodawanie">Dodawanie</option>
+            <option value="Odejmowanie">Odejmowanie</option>
+            <option value="Mnożenie">Mnożenie</option>
+            <option value="Dzielenie">Dzielenie</option>
+        </select>
+        <input type="submit" />
+    </div>
+
+    <h2>
+        @if (ViewBag.Wynik != null)
+        {
+            <p>Wynik: @ViewBag.Wynik</p>
+        }
+    </h2>
+
+</form>
